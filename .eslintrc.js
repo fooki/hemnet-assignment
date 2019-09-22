@@ -10,7 +10,9 @@ module.exports = {
     'SharedArrayBuffer': 'readonly',
     'shallow': 'readonly',
     'expect': 'readonly',
-    'React': 'readonly'
+    'React': 'readonly',
+    'axios': 'readonly',
+    'moxios': 'readonly'
   },
   'parserOptions': {
     'ecmaFeatures': {

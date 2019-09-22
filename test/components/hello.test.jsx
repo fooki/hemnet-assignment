@@ -11,6 +11,6 @@ describe('<Hello>', () => {
     it('renders a hello to DERP', () => {
       let wrapper = shallow(<Hello name='Kalle' />)
       expect(wrapper.find('h1').text()).to.equal('Hello Kalle!')
-    });
-  });
+    })
+  })
 })

@@ -21,9 +21,12 @@
     "mocha": "^6.2.0",
     "chai": "^4.2.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "1.14.0"
+    "enzyme-adapter-react-16": "1.14.0",
+    "eslint": "6.4.0",
+    "eslint-plugin-react": "7.14.3"
   },
   "scripts": {
-    "test": "NODE_PATH=app/javascript:$NODE_PATH mocha --require @babel/register --recursive test/**/*"
+    "test": "NODE_PATH=app/javascript:$NODE_PATH mocha --require @babel/register --recursive test/**/*",
+    "lintfix": "eslint --fix app/**/*.js* test/**/*.js*"
   }
 }

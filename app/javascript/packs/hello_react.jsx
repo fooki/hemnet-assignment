@@ -5,9 +5,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import './bootstrap.scss';
 
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <div className="container">
+    <div className="jumbotron">
+      <h1>Hello {props.name}!</h1>
+    </div>
+  </div>
 )
 
 Hello.defaultProps = {

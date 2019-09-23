@@ -5,7 +5,7 @@ module TronaldDump
     def self.call(query:)
       raise QueryTooSmallError if String(query).size < 3
 
-      Rails.cache.fetch("tronald-qotes-#{query}", expires_in: 1.hour) do
+      Rails.cache.fetch("tronald-quotes-#{query}", expires_in: 1.hour) do
         Rails.logger.info('tronald cache miss, fetchin data')
 
         url = "https://api.tronalddump.io/search/quote?query=#{query}"

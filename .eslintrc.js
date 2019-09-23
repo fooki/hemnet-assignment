@@ -13,6 +13,7 @@ module.exports = {
     'expect': 'readonly',
     'React': 'readonly',
     'Factory': 'readonly',
+    'process': 'readonly',
     'axios': 'readonly',
     'sinon': 'readonly',
     'moxios': 'readonly'

@@ -29,7 +29,7 @@ class QuotesListContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { quotes: state.quotes.entries }
+  return { quotes: state.quotes }
 }
 
 const mapDispatchToProps = (dispatch) => {

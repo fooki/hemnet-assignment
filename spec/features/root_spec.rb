@@ -26,4 +26,16 @@ feature 'Root page', js: true do
       expect(page).to have_content('Obama ftw!')
     end
   end
+
+  context 'When the external api is down' do
+    before { stub_request(:get, /tronald/).to_raise(HTTP::ConnectionError) }
+
+    scenario 'User sees that the service is unavailable' do
+      visit root_path
+
+      find('#search-quotes').set('Obama')
+
+      expect(page).to have_content('Service Unavailable')
+    end
+  end
 end

@@ -1,5 +1,8 @@
 import reducer from 'reducers/quotes_reducer'
-import { createGetQuotesSuccess } from 'actions/quote_actions'
+import {
+  createGetQuotesFailure,
+  createGetQuotesSuccess
+} from 'actions/quote_actions'
 
 describe('QuotesReducer', () => {
   let quotes = Factory.buildList('quote', 5)
@@ -29,6 +32,29 @@ describe('QuotesReducer', () => {
 
         expect(reducer(withQuotes, createGetQuotesSuccess({quotes: newQuotes}))).
           to.deep.equal({entries: newQuotes})
+      })
+    })
+  })
+
+  describe('GET_QUOTES_FAILURE', () => {
+    let errorResponse = { status: '409', error: 'blah' }
+
+    context('from initial state', () => {
+      it('adds error information', () => {
+        expect(reducer(undefined, createGetQuotesFailure({info: errorResponse}))).
+          to.deep.equal({entries: [], error: { status: '409', message: 'blah'}})
+      })
+    })
+
+    context('from a state where quotes exists', () => {
+      it('keeps the existing quotes and adds error information', () => {
+        let withQuotes = reducer(undefined, createGetQuotesSuccess({quotes}))
+
+        expect(reducer(withQuotes, createGetQuotesFailure({info: errorResponse}))).
+          to.deep.equal({
+            entries: withQuotes.entries,
+            error: { status: '409', message: 'blah'}
+          })
       })
     })
   })

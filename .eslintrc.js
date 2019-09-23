@@ -11,7 +11,9 @@ module.exports = {
     'shallow': 'readonly',
     'expect': 'readonly',
     'React': 'readonly',
+    'Factory': 'readonly',
     'axios': 'readonly',
+    'sinon': 'readonly',
     'moxios': 'readonly'
   },
   'parserOptions': {

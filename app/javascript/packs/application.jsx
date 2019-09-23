@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import './bootstrap.scss'
-import Hello from 'components/hello'
 import store from '../store/store'
+import QuotesListContainer from '../containers/quotes_list_container.jsx'
 
 const Application = () => (
   <Provider store={store}>
-    <Hello name='React' />
+    <QuotesListContainer />
   </Provider>
 )
 

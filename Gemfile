@@ -25,7 +25,7 @@ gem 'webmock', '3.7.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'capybara', '~> 2.7.1'
+  gem 'capybara', '~> 3.29.0'
   gem 'capybara-selenium', '0.0.6'
   gem 'factory_bot_rails', '5.0.2'
   gem 'pry', '~> 0.12.2'

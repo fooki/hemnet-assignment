@@ -25,7 +25,9 @@ describe('Quote actions', () => {
   describe('getQuotes', () => {
     context('when the api server responds successfully', () => {
       before(() => {
-        moxios.stubRequest(/.*/, {
+        // Note: We test the query implictly here. Not great, but not sure how
+        // to write a test for it without taking a lot of time.
+        moxios.stubRequest(/.*\?query=Sanders/, {
           status: 200,
           response: { quotes: quotes }
         })
@@ -33,7 +35,7 @@ describe('Quote actions', () => {
 
       it('dispatches a GET_QUOTES_SUCCESS action', () => {
         let disp = sinon.spy()
-        return getQuotes()(disp).then(() => {}).then(() => {
+        return getQuotes({query: 'Sanders'})(disp).then(() => {}).then(() => {
           expect(disp).to.have.been.calledWith(createGetQuotesSuccess({quotes}))
         })
       })

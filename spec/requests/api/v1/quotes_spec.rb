@@ -12,7 +12,7 @@ describe 'GET /api/v1/quotes' do
       build(:tronald_response, query: 'Obama', quotes: quotes)
     end
 
-    before { stub_request(:get, /tronald/).to_return(body: body) }
+    before { stub_request(:get, /.*/).to_return(body: body) }
 
     it { is_expected.to have_http_status :success }
 

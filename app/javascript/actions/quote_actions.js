@@ -9,10 +9,10 @@ export const createGetQuotesSuccess = ({quotes}) => {
   })
 }
 
-export const getQuotes = () => {
+export const getQuotes = ({query}) => {
   return (dispatch) => {
     return axios.
-      get('/api/v1/quotes', { params: { query: 'obama'}}).
+      get('/api/v1/quotes', { params: { query }}).
       then((response) => {
         return dispatch(
           createGetQuotesSuccess({quotes: response.data.quotes})

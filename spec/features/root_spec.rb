@@ -1,4 +1,4 @@
-RSpec.feature 'Root page' do
+feature 'Root page' do
   scenario 'User sees the welcoming heading', js: true do
     visit root_path
     within '.jumbotron' do

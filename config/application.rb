@@ -31,5 +31,12 @@ module HemnetAssignment
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.action_dispatch.rescue_responses.merge!(
+      'TronaldDump::GetQuotes::QueryTooSmallError' => :bad_request,
+
+      # TODO: Probably better to wrap this, its too vague
+      'HTTP::ConnectionError' => :service_unavailable
+    )
   end
 end

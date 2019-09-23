@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api, constraints: { format: 'json' }, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :quotes, only: :index
+    end
+  end
+
   root to: 'application#show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

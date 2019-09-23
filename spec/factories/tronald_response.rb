@@ -10,7 +10,7 @@ FactoryBot.define do
       {
         "count": quotes.size,
         "total": quotes.size,
-        "_embedded": { "quotes": quotes },
+        "_embedded": quotes.any? ? { "quotes": quotes } : [],
         "_links": {
           "self": {
             "href": "/search/quote?query=#{query}&page=#{page}"

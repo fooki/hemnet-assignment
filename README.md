@@ -26,7 +26,8 @@ docker run -d -p 3000:3000 tronald:latest
 ```console
 bundle install
 yarn install
-bundle exec rails s -b 0.0.0.0 -p 3000
+RAILS_ENV=production bundle exec rake webpacker:compile
+RAILS_ENV=production bundle exec rails s -b 0.0.0.0 -p 3000
 ```
 
 ## Testing

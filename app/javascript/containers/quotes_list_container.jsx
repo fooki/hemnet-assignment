@@ -7,7 +7,6 @@ import { getQuotes } from '../actions/quote_actions'
 import debounce from 'lodash/debounce'
 
 
-
 class QuotesListContainer extends React.Component {
 
   onSearchChange = debounce(value => {
@@ -18,9 +17,9 @@ class QuotesListContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <SearchBar
-          placeholder={'Search for quotes! 3 characters minimum..'}
+          placeholder={'Search for Donald Trump quotes! 3 characters minimum..'}
           onChange={({target: { value }}) => this.onSearchChange(value)} />
         <QuotesList {...this.props}/>
       </div>

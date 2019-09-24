@@ -2,27 +2,25 @@ import React from 'react'
 import QuoteListItem from '../components/quotes_list_item'
 
 const QuotesList = ({ quotes }) => {
-  let content
-
   if(quotes.error) {
-    content = (
-      <div>
-        {quotes.error.message}
+    return (
+      <div className="row">
+        <div className="col">
+          {quotes.error.message}
+        </div>
       </div>
     )
   } else {
-    content = (
-      <ul className='list-group'>
-        {quotes.entries.map((quote, i) => <QuoteListItem key={i} {...quote}/>)}
-      </ul>
+    return (
+      <div className="row">
+        <div className="col">
+          <ul className='list-group list-group-flush'>
+            {quotes.entries.map((quote, i) => <QuoteListItem key={i} {...quote}/>)}
+          </ul>
+        </div>
+      </div>
     )
   }
-
-  return (
-    <div className='container'>
-      {content}
-    </div>
-  )
 }
 
 export default QuotesList

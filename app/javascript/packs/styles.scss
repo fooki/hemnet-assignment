@@ -1,0 +1,36 @@
+$quote-color: #999;
+$date-color: #aaa;
+
+#search-quotes {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+}
+
+blockquote {
+    font-size: 140%;
+    color: $quote-color;
+    font-weight: bold;
+}
+
+.quote-date {
+    color: $date-color
+}
+
+/* Based on https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
+blockquote:before {
+    color: $quote-color;
+    content: open-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.15em;
+    vertical-align: -0.4em;
+}
+
+blockquote:after {
+    color: $quote-color;
+    content: close-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.15em;
+    vertical-align: -0.4em;
+}
